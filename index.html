@@ -99,22 +99,23 @@
 
   .specimen{
     display:grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 220px 1fr;
     gap:3.2rem;
     align-items:start;
     padding:4.4rem 0;
     border-bottom:1px solid var(--line);
   }
   .specimen:last-child{border-bottom:none;}
-  .specimen.reverse .art{order:2;}
-  .specimen.reverse .info{order:1;}
 
   .art{
     position:relative;
+    width:220px;
   }
   .art img{
-    width:100%;
+    width:220px;
+    height:293px;
     display:block;
+    object-fit:cover;
     border-radius:2px;
   }
   .art figcaption{
@@ -193,14 +194,13 @@
   footer a{text-decoration:underline; text-decoration-color:var(--line);}
 
   @media (max-width: 700px){
-    .specimen, .specimen.reverse{
+    .specimen{
       grid-template-columns:1fr;
       gap:1.6rem;
       padding:3rem 0;
     }
-    .specimen .art, .specimen.reverse .art,
-    .specimen .info, .specimen.reverse .info{order:initial;}
-    .art{max-width:260px;}
+    .art{width:180px;}
+    .art img{width:180px; height:240px;}
     .specs{gap:1.8rem;}
   }
 
@@ -242,7 +242,7 @@
     </div>
   </section>
 
-  <section class="specimen reverse">
+  <section class="specimen">
     <figure class="art">
       <img src="https://reconstruir.org.br/wp-content/uploads/2026/04/Washing-Machine-300x400.jpeg" alt="Embalagem da flor Washing Machine" loading="lazy">
       <figcaption><a href="https://reconstruir.org.br/wp-content/uploads/2026/04/Analise-WashingMachine.png" target="_blank" rel="noopener">Ver laudo de análise</a></figcaption>
@@ -281,7 +281,7 @@
     </div>
   </section>
 
-  <section class="specimen reverse">
+  <section class="specimen">
     <figure class="art">
       <img src="https://reconstruir.org.br/wp-content/uploads/2026/01/Embalagens-inflor-300x400.png" alt="Embalagem da flor Strawberry Lemonade" loading="lazy">
       <figcaption><a href="https://reconstruir.org.br/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-28-at-23.07.31.jpeg" target="_blank" rel="noopener">Ver laudo de análise</a></figcaption>
