@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genéticas Disponíveis · Reconstruir</title>
+<meta name="description" content="Catálogo consolidado das genéticas de cannabis medicinal da Associação Reconstruir — Natal/RN.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,480;0,9..144,600;1,9..144,420&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#16281D;
+    --forest-2:#1E3527;
+    --cream:#F3EEDC;
+    --cream-2:#EAE3C9;
+    --moss:#4F7358;
+    --moss-dim:#7E9884;
+    --rust:#A6502B;
+    --ink:#201E17;
+    --ink-soft:#5B5748;
+    --line:#D8CEAE;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3, .display{
+    font-family:'Fraunces', serif;
+    font-weight:480;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+
+  a{color:inherit;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--forest);
+    color:var(--cream);
+    padding:5.5rem 1.75rem 4.5rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    right:-14%;
+    top:-30%;
+    width:60%;
+    height:180%;
+    background:radial-gradient(circle at center, rgba(126,152,132,0.35), transparent 65%);
+    pointer-events:none;
+  }
+  .hero-inner{
+    max-width:760px;
+    margin:0 auto;
+    position:relative;
+  }
+  .eyebrow{
+    font-size:0.95rem;
+    color:var(--moss-dim);
+    margin-bottom:1.1rem;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5.5vw, 3.6rem);
+    line-height:1.05;
+    max-width:14ch;
+  }
+  .hero p{
+    margin-top:1.4rem;
+    max-width:46ch;
+    font-size:1.08rem;
+    line-height:1.6;
+    color:#DDD6BE;
+  }
+  .hero .place{
+    margin-top:2.4rem;
+    font-size:0.92rem;
+    color:var(--moss-dim);
+    border-top:1px solid rgba(243,238,220,0.18);
+    padding-top:1.2rem;
+    display:inline-block;
+  }
+
+  /* ---------- Specimens ---------- */
+  .catalog{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 1.75rem;
+  }
+
+  .specimen{
+    display:grid;
+    grid-template-columns: 300px 1fr;
+    gap:3.2rem;
+    align-items:start;
+    padding:4.4rem 0;
+    border-bottom:1px solid var(--line);
+  }
+  .specimen:last-child{border-bottom:none;}
+  .specimen.reverse .art{order:2;}
+  .specimen.reverse .info{order:1;}
+
+  .art{
+    position:relative;
+  }
+  .art img{
+    width:100%;
+    display:block;
+    border-radius:2px;
+  }
+  .art figcaption{
+    margin-top:0.9rem;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+  }
+  .art figcaption a{
+    text-decoration:underline;
+    text-decoration-color:var(--line);
+    text-underline-offset:3px;
+  }
+  .art figcaption a:hover{text-decoration-color:var(--rust);}
+
+  .kind{
+    font-size:0.95rem;
+    color:var(--moss);
+    margin-bottom:0.5rem;
+  }
+  .kind .sep{color:var(--line);padding:0 0.45em;}
+
+  .info h2{
+    font-size:2.1rem;
+    color:var(--ink);
+    line-height:1.1;
+  }
+
+  .terpenos{
+    margin-top:1.5rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem;
+  }
+  .terpenos span{
+    font-size:0.86rem;
+    padding:0.4em 0.85em;
+    border:1px solid var(--line);
+    border-radius:999px;
+    color:var(--ink-soft);
+    background:var(--cream-2);
+  }
+
+  .specs{
+    display:flex;
+    gap:2.6rem;
+    margin:1.9rem 0 1.7rem;
+  }
+  .spec-item .num{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:420;
+    font-size:2rem;
+    color:var(--rust);
+    line-height:1;
+  }
+  .spec-item .lbl{
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    margin-top:0.35rem;
+  }
+
+  .desc{
+    font-size:1.04rem;
+    line-height:1.7;
+    color:var(--ink);
+    max-width:52ch;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:3.2rem 1.75rem 4rem;
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:0.88rem;
+  }
+  footer a{text-decoration:underline; text-decoration-color:var(--line);}
+
+  @media (max-width: 700px){
+    .specimen, .specimen.reverse{
+      grid-template-columns:1fr;
+      gap:1.6rem;
+      padding:3rem 0;
+    }
+    .specimen .art, .specimen.reverse .art,
+    .specimen .info, .specimen.reverse .info{order:initial;}
+    .art{max-width:260px;}
+    .specs{gap:1.8rem;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Associação Reconstruir</p>
+    <h1>Genéticas disponíveis</h1>
+    <p>Um resumo das flores atualmente cultivadas pela associação, com perfil de terpenos, canabinoides e indicações de uso reunidos a partir das fichas individuais de cada genética.</p>
+    <span class="place">Natal/RN</span>
+  </div>
+</header>
+
+<main class="catalog">
+
+  <section class="specimen">
+    <figure class="art">
+      <img src="https://reconstruir.org.br/wp-content/uploads/2026/03/Chocolope-300x400.png" alt="Embalagem da flor Chocolope" loading="lazy">
+      <figcaption><a href="https://reconstruir.org.br/wp-content/uploads/2026/03/Analise_Chocolope.jpeg" target="_blank" rel="noopener">Ver laudo de análise</a></figcaption>
+    </figure>
+    <div class="info">
+      <p class="kind">Híbrido<span class="sep">·</span>Sativa dominante</p>
+      <h2>Chocolope</h2>
+      <div class="terpenos">
+        <span>Mirceno</span><span>B. Cariofileno</span><span>Limoneno</span>
+      </div>
+      <div class="specs">
+        <div class="spec-item"><div class="num">1%</div><div class="lbl">CBD</div></div>
+        <div class="spec-item"><div class="num">0,2%</div><div class="lbl">CBG</div></div>
+        <div class="spec-item"><div class="num">&lt;18,3%</div><div class="lbl">THC</div></div>
+      </div>
+      <p class="desc">Indicada para depressão, falta de motivação e fadiga, proporcionando clareza mental, energia e bom humor.</p>
+    </div>
+  </section>
+
+  <section class="specimen reverse">
+    <figure class="art">
+      <img src="https://reconstruir.org.br/wp-content/uploads/2026/04/Washing-Machine-300x400.jpeg" alt="Embalagem da flor Washing Machine" loading="lazy">
+      <figcaption><a href="https://reconstruir.org.br/wp-content/uploads/2026/04/Analise-WashingMachine.png" target="_blank" rel="noopener">Ver laudo de análise</a></figcaption>
+    </figure>
+    <div class="info">
+      <p class="kind">Híbrido</p>
+      <h2>Washing Machine</h2>
+      <div class="terpenos">
+        <span>Mirceno</span><span>Humuleno</span><span>Limoneno</span>
+      </div>
+      <div class="specs">
+        <div class="spec-item"><div class="num">0,6%</div><div class="lbl">CBD</div></div>
+        <div class="spec-item"><div class="num">24,2%</div><div class="lbl">THC</div></div>
+      </div>
+      <p class="desc">Perfil com predominância de terpenos de ação ansiolítica e moduladora do sistema endocanabinoide. Indicada como adjuvante no manejo de transtornos ansiosos, estresse crônico e distúrbios do sono. Pode contribuir para relaxamento muscular e redução de dor de origem tensional, com potencial efeito levemente sedativo.</p>
+    </div>
+  </section>
+
+  <section class="specimen">
+    <figure class="art">
+      <img src="https://reconstruir.org.br/wp-content/uploads/2026/03/HoneyBananaCake-300x400.png" alt="Embalagem da flor Honey Banana Cake" loading="lazy">
+      <figcaption><a href="https://reconstruir.org.br/wp-content/uploads/2026/03/Analise_HoneyBananCake.jpeg" target="_blank" rel="noopener">Ver laudo de análise</a></figcaption>
+    </figure>
+    <div class="info">
+      <p class="kind">Híbrido<span class="sep">·</span>Indica dominante</p>
+      <h2>Honey Banana Cake</h2>
+      <div class="terpenos">
+        <span>Mirceno</span><span>Cariofileno</span><span>Limoneno</span>
+      </div>
+      <div class="specs">
+        <div class="spec-item"><div class="num">1,1%</div><div class="lbl">CBD</div></div>
+        <div class="spec-item"><div class="num">0,3%</div><div class="lbl">CBG</div></div>
+        <div class="spec-item"><div class="num">&lt;31%</div><div class="lbl">THC</div></div>
+      </div>
+      <p class="desc">Indicada para o alívio de dores crônicas, estimulação do apetite e redução de náuseas, favorece o relaxamento muscular e a melhora do sono.</p>
+    </div>
+  </section>
+
+  <section class="specimen reverse">
+    <figure class="art">
+      <img src="https://reconstruir.org.br/wp-content/uploads/2026/01/Embalagens-inflor-300x400.png" alt="Embalagem da flor Strawberry Lemonade" loading="lazy">
+      <figcaption><a href="https://reconstruir.org.br/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-28-at-23.07.31.jpeg" target="_blank" rel="noopener">Ver laudo de análise</a></figcaption>
+    </figure>
+    <div class="info">
+      <p class="kind">Híbrido<span class="sep">·</span>Sativa dominante</p>
+      <h2>Strawberry Lemonade</h2>
+      <div class="terpenos">
+        <span>Mirceno</span><span>B. Cariofileno</span><span>Limoneno</span>
+      </div>
+      <div class="specs">
+        <div class="spec-item"><div class="num">1%</div><div class="lbl">CBD</div></div>
+        <div class="spec-item"><div class="num">&lt;26%</div><div class="lbl">THC</div></div>
+      </div>
+      <p class="desc">Alívio de estresse, fadiga e dores leves, com efeito energizante e equilibrado, favorecendo o bem-estar e foco mental.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Dados extraídos das fichas individuais em <a href="https://reconstruir.org.br/geneticas/" target="_blank" rel="noopener">reconstruir.org.br/geneticas</a>. Associação Reconstruir — Natal/RN.
+</footer>
+
+</body>
+</html>
